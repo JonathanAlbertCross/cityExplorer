@@ -39,11 +39,16 @@ function App() {
       </form>
       {location.lat && (
         <div>
-          <button onClick={() => handleNumber(-1)}>-</button>
+          <button className="minus" onClick={() => handleNumber(-1)}>
+            -
+          </button>
           <span>{number}</span>
-          <button onClick={() => handleNumber(1)}>+</button>
+          <button className="plus" onClick={() => handleNumber(1)}>
+            +
+          </button>
 
           <img
+            className="map"
             src={`https://maps.locationiq.com/v3/staticmap?key=${API_KEY}&center=${location.lat},${location.lon}&zoom=${number}&format=png`}
           />
         </div>
